@@ -15,14 +15,14 @@ header h1{font-size:17px;font-weight:500}
 .hdr-btn{margin-left:auto;background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:var(--rs);padding:6px 12px;font-size:13px;font-family:inherit;cursor:pointer}
 .hdr-btn:hover{background:rgba(255,255,255,0.2)}
 .container{max-width:680px;margin:0 auto;padding:20px 14px}
-
+ 
 /* Summary */
 .summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px}
 .sc{background:var(--surface);border-radius:var(--rs);padding:12px 14px;border:1px solid var(--border)}
 .sc .lbl{font-size:11px;color:var(--ink3);margin-bottom:5px}
 .sc .val{font-size:19px;font-weight:600}
 .sc.total .val{color:var(--ink)}.sc.paid .val{color:var(--green)}.sc.remain .val{color:var(--red)}
-
+ 
 /* Add form */
 .add-section{background:var(--surface);border-radius:var(--r);padding:18px;margin-bottom:18px;border:1px solid var(--border);box-shadow:var(--sh)}
 .add-section h2{font-size:14px;font-weight:500;color:var(--ink2);margin-bottom:12px}
@@ -33,7 +33,7 @@ header h1{font-size:17px;font-weight:500}
 .fg input:focus{border-color:var(--ink)}
 .btn-primary{background:var(--ink);color:#fff;border:none;border-radius:var(--rs);padding:9px 18px;font-size:14px;font-family:inherit;cursor:pointer;white-space:nowrap;transition:opacity .15s;height:38px}
 .btn-primary:hover{opacity:.85}.btn-primary:disabled{opacity:.4;cursor:not-allowed}
-
+ 
 /* Debt cards */
 .debt-list{display:flex;flex-direction:column;gap:10px}
 .debt-card{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);box-shadow:var(--sh);overflow:hidden}
@@ -45,41 +45,41 @@ header h1{font-size:17px;font-weight:500}
 .debt-remain{font-size:19px;font-weight:600;color:var(--red)}
 .debt-remain.done{color:var(--green)}
 .badge-done{display:inline-block;background:var(--green-light);color:var(--green);border-radius:20px;font-size:11px;padding:2px 9px;font-weight:500;margin-left:6px;vertical-align:middle}
-
+ 
 /* Progress */
 .progress-wrap{padding:0 16px 8px}
 .progress-bar{height:4px;background:var(--surface2);border-radius:3px;overflow:hidden}
 .progress-fill{height:100%;background:var(--green);border-radius:3px;transition:width .4s}
 .progress-lbl{font-size:11px;color:var(--ink3);margin-top:4px;display:flex;justify-content:space-between}
-
+ 
 /* Last slip */
 .last-slip{font-size:11px;padding:2px 16px 8px}
 .last-slip a{color:var(--ink3);text-decoration:none}.last-slip a:hover{color:var(--ink);text-decoration:underline}
-
+ 
 /* Actions row */
 .debt-actions{padding:10px 16px 12px;border-top:1px solid var(--border);background:var(--surface2);display:flex;gap:8px;align-items:stretch;flex-wrap:wrap}
 .pay-inputs{display:flex;gap:6px;flex:1;align-items:center;flex-wrap:wrap;min-width:200px}
 .pay-inputs input{border:1px solid var(--border);border-radius:var(--rs);padding:7px 9px;font-size:13px;font-family:inherit;background:var(--surface);color:var(--ink);outline:none;flex:1;min-width:80px;height:34px}
 .pay-inputs input:focus{border-color:var(--ink)}
-
+ 
 /* Slip button — standalone, not inside label */
 .slip-btn{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--ink3);cursor:pointer;border:1px dashed var(--border);border-radius:var(--rs);padding:0 10px;background:var(--surface);height:34px;white-space:nowrap;transition:border-color .15s;user-select:none;font-family:inherit}
 .slip-btn:hover{border-color:var(--ink3);color:var(--ink2)}
 .slip-btn.has-file{border-color:var(--green);color:var(--green);background:var(--green-light)}
-
+ 
 .btn-pay{background:var(--green);color:#fff;border:none;border-radius:var(--rs);padding:0 14px;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;transition:opacity .15s;height:34px}
 .btn-pay:hover{opacity:.85}.btn-pay:disabled{opacity:.4;cursor:not-allowed}
 .btn-delete{background:none;border:none;color:var(--ink3);cursor:pointer;font-size:17px;padding:0 6px;border-radius:6px;line-height:1;transition:background .15s,color .15s;height:34px;display:flex;align-items:center}
 .btn-delete:hover{background:var(--red-light);color:var(--red)}
-
+ 
 /* Empty / loading */
 .empty-state{text-align:center;padding:44px 20px;color:var(--ink3);font-size:14px}
 .empty-state .icon{font-size:36px;margin-bottom:10px}
-
+ 
 /* Toast */
 #toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 18px;border-radius:8px;font-size:13px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:999;white-space:nowrap}
 #toast.show{opacity:1}
-
+ 
 /* Modals */
 .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:100;align-items:center;justify-content:center}
 .modal-overlay.open{display:flex}
@@ -91,30 +91,30 @@ header h1{font-size:17px;font-weight:500}
 .modal-btns{display:flex;gap:8px;justify-content:flex-end}
 .btn-secondary{background:none;border:1px solid var(--border);border-radius:var(--rs);padding:7px 14px;font-size:13px;font-family:inherit;cursor:pointer;color:var(--ink2)}
 .btn-secondary:hover{background:var(--surface2)}
-
+ 
 #slip-view-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:200;align-items:center;justify-content:center}
 #slip-view-overlay.open{display:flex}
 #slip-view-overlay img{max-width:90vw;max-height:85vh;border-radius:10px}
-
+ 
 .spinner{display:inline-block;width:13px;height:13px;border:2px solid rgba(255,255,255,0.4);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle}
 @keyframes spin{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
-
+ 
 <header>
   <span>📋</span>
   <h1>บันทึกหนี้</h1>
   <button class="hdr-btn" onclick="openConfig()">⚙️ ตั้งค่า API</button>
 </header>
-
+ 
 <div class="container">
   <div class="summary-grid">
     <div class="sc total"><div class="lbl">หนี้ทั้งหมด</div><div class="val" id="sum-total">฿0</div></div>
     <div class="sc paid"><div class="lbl">จ่ายแล้ว</div><div class="val" id="sum-paid">฿0</div></div>
     <div class="sc remain"><div class="lbl">ยังค้างอยู่</div><div class="val" id="sum-remain">฿0</div></div>
   </div>
-
+ 
   <div class="add-section">
     <h2>เพิ่มรายการหนี้</h2>
     <div class="form-row">
@@ -129,14 +129,14 @@ header h1{font-size:17px;font-weight:500}
       <button class="btn-primary" id="btn-add" onclick="addDebt()">+ เพิ่ม</button>
     </div>
   </div>
-
+ 
   <div class="debt-list" id="debt-list">
     <div class="empty-state"><div class="icon">⏳</div>กำลังโหลด...</div>
   </div>
 </div>
-
+ 
 <div id="toast"></div>
-
+ 
 <!-- Config Modal -->
 <div class="modal-overlay" id="config-overlay">
   <div class="modal-box">
@@ -149,19 +149,19 @@ header h1{font-size:17px;font-weight:500}
     </div>
   </div>
 </div>
-
+ 
 <!-- Slip view modal -->
 <div id="slip-view-overlay" onclick="this.classList.remove('open')">
   <img id="slip-view-img" src="" alt="สลิป" />
 </div>
-
+ 
 <!-- Hidden file inputs (อยู่นอก debt cards เพื่อไม่ให้ถูก re-render ทับ) -->
 <div id="file-inputs-container" style="display:none"></div>
-
+ 
 <script>
 // ── CONFIG ────────────────────────────────────────────────
 let API_URL = localStorage.getItem("debt_api_url") || "";
-
+ 
 function openConfig() {
   document.getElementById("config-url").value = API_URL;
   document.getElementById("config-overlay").classList.add("open");
@@ -174,11 +174,11 @@ function saveConfig() {
   showToast("บันทึก URL แล้ว ✅");
   loadDebts();
 }
-
+ 
 // ── STATE ─────────────────────────────────────────────────
 let debts = [];
 const pendingSlips = {}; // debtId -> { file, previewUrl }
-
+ 
 // ── API ───────────────────────────────────────────────────
 async function api(payload) {
   if (!API_URL) { showToast("⚠️ กรุณาตั้งค่า API URL ก่อน"); return null; }
@@ -194,7 +194,7 @@ async function api(payload) {
     return null;
   }
 }
-
+ 
 async function doUploadSlip(file) {
   return new Promise(resolve => {
     const reader = new FileReader();
@@ -206,7 +206,7 @@ async function doUploadSlip(file) {
     reader.readAsDataURL(file);
   });
 }
-
+ 
 // ── LOAD & RENDER ─────────────────────────────────────────
 async function loadDebts() {
   const list = document.getElementById("debt-list");
@@ -226,7 +226,7 @@ async function loadDebts() {
   renderDebts();
   syncFileInputs();
 }
-
+ 
 function renderDebts() {
   updateSummary(debts);
   const list = document.getElementById("debt-list");
@@ -275,7 +275,7 @@ function renderDebts() {
 </div>`;
   }).join("");
 }
-
+ 
 // ── FILE INPUT MANAGEMENT (แยกออกจาก card เพื่อไม่ถูก re-render) ────
 function syncFileInputs() {
   const container = document.getElementById("file-inputs-container");
@@ -292,12 +292,12 @@ function syncFileInputs() {
     }
   });
 }
-
+ 
 function triggerFileInput(id) {
   const inp = document.getElementById("fi-"+id);
   if (inp) inp.click();
 }
-
+ 
 function onFileSelected(id, input) {
   const file = input.files[0];
   if (!file) return;
@@ -311,7 +311,7 @@ function onFileSelected(id, input) {
   }
   showToast("เลือกสลิปแล้ว ✅");
 }
-
+ 
 // ── ACTIONS ───────────────────────────────────────────────
 async function addDebt() {
   const label  = document.getElementById("new-label").value.trim();
@@ -330,7 +330,7 @@ async function addDebt() {
     showToast("เกิดข้อผิดพลาด ❌");
   }
 }
-
+ 
 async function recordPayment(id) {
   const amountEl = document.getElementById("pay-"+id);
   const noteEl   = document.getElementById("note-"+id);
@@ -338,7 +338,7 @@ async function recordPayment(id) {
   if (!amount || amount <= 0) { showToast("กรุณาใส่จำนวนเงินที่จ่าย"); return; }
   const btn = document.getElementById("btn-pay-"+id);
   btn.disabled = true; btn.innerHTML = '<span class="spinner"></span>';
-
+ 
   let slipUrl = null;
   if (pendingSlips[id]) {
     showToast("กำลังอัปโหลดสลิป...");
@@ -346,7 +346,7 @@ async function recordPayment(id) {
     URL.revokeObjectURL(pendingSlips[id].previewUrl);
     delete pendingSlips[id];
   }
-
+ 
   const res = await api({ action:"addPayment", id, amount, slipUrl, note: noteEl?.value.trim()||"" });
   if (res && res.success) {
     showToast("บันทึกการจ่ายแล้ว 💸");
@@ -356,14 +356,14 @@ async function recordPayment(id) {
     showToast("เกิดข้อผิดพลาด ❌");
   }
 }
-
+ 
 async function confirmDelete(id, label) {
   if (!confirm('ยืนยันลบ "'+label+'"?')) return;
   const res = await api({ action:"deleteDebt", id });
   if (res && res.success) { showToast("ลบแล้ว 🗑"); await loadDebts(); }
   else showToast("ลบไม่สำเร็จ ❌");
 }
-
+ 
 // ── UTILS ─────────────────────────────────────────────────
 function updateSummary(list) {
   const total = list.reduce((s,d)=>s+(Number(d.totalAmount)||0),0);
@@ -379,7 +379,7 @@ function showToast(msg) {
   t.textContent=msg; t.classList.add("show");
   setTimeout(()=>t.classList.remove("show"),2500);
 }
-
+ 
 // ── INIT ──────────────────────────────────────────────────
 if (!API_URL) setTimeout(openConfig, 300);
 else loadDebts();
