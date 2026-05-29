@@ -7,342 +7,97 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600&family=Noto+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet" />
 <style>
-  :root {
-    --bg: #f7f4ef;
-    --surface: #ffffff;
-    --surface2: #f0ece4;
-    --ink: #1c1916;
-    --ink2: #6b6560;
-    --ink3: #9e9892;
-    --accent: #c0392b;
-    --accent-light: #fdf0ee;
-    --green: #27704a;
-    --green-light: #edf6f1;
-    --amber: #b86000;
-    --amber-light: #fdf4e7;
-    --border: rgba(0,0,0,0.08);
-    --radius: 14px;
-    --radius-sm: 8px;
-    --shadow: 0 2px 12px rgba(0,0,0,0.07);
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: 'Sarabun', 'Noto Sans Thai', sans-serif;
-    background: var(--bg);
-    color: var(--ink);
-    min-height: 100vh;
-    font-size: 15px;
-  }
-  header {
-    background: var(--ink);
-    color: #fff;
-    padding: 18px 24px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  header h1 { font-size: 18px; font-weight: 500; letter-spacing: 0.02em; }
-  header span { font-size: 22px; }
-  .container { max-width: 680px; margin: 0 auto; padding: 24px 16px; }
+:root{--bg:#f7f4ef;--surface:#fff;--surface2:#f0ece4;--ink:#1c1916;--ink2:#6b6560;--ink3:#9e9892;--red:#c0392b;--red-light:#fdf0ee;--green:#27704a;--green-light:#edf6f1;--border:rgba(0,0,0,0.08);--r:14px;--rs:8px;--sh:0 2px 12px rgba(0,0,0,0.07)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Sarabun','Noto Sans Thai',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;font-size:15px}
+header{background:var(--ink);color:#fff;padding:16px 20px;display:flex;align-items:center;gap:10px}
+header h1{font-size:17px;font-weight:500}
+.hdr-btn{margin-left:auto;background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:var(--rs);padding:6px 12px;font-size:13px;font-family:inherit;cursor:pointer}
+.hdr-btn:hover{background:rgba(255,255,255,0.2)}
+.container{max-width:680px;margin:0 auto;padding:20px 14px}
 
-  /* Summary Cards */
-  .summary-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-bottom: 24px;
-  }
-  .summary-card {
-    background: var(--surface);
-    border-radius: var(--radius-sm);
-    padding: 14px 16px;
-    border: 1px solid var(--border);
-  }
-  .summary-card .label { font-size: 12px; color: var(--ink3); margin-bottom: 6px; }
-  .summary-card .value { font-size: 20px; font-weight: 600; }
-  .summary-card.total .value { color: var(--ink); }
-  .summary-card.paid .value { color: var(--green); }
-  .summary-card.remain .value { color: var(--accent); }
+/* Summary */
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px}
+.sc{background:var(--surface);border-radius:var(--rs);padding:12px 14px;border:1px solid var(--border)}
+.sc .lbl{font-size:11px;color:var(--ink3);margin-bottom:5px}
+.sc .val{font-size:19px;font-weight:600}
+.sc.total .val{color:var(--ink)}.sc.paid .val{color:var(--green)}.sc.remain .val{color:var(--red)}
 
-  /* Add Debt Form */
-  .add-section {
-    background: var(--surface);
-    border-radius: var(--radius);
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-  }
-  .add-section h2 { font-size: 15px; font-weight: 500; margin-bottom: 14px; color: var(--ink2); }
-  .form-row { display: flex; gap: 10px; align-items: flex-end; }
-  .form-group { display: flex; flex-direction: column; gap: 5px; flex: 1; }
-  .form-group label { font-size: 12px; color: var(--ink3); }
-  .form-group input {
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 9px 12px;
-    font-size: 15px;
-    font-family: inherit;
-    background: var(--bg);
-    color: var(--ink);
-    outline: none;
-    transition: border-color 0.15s;
-  }
-  .form-group input:focus { border-color: var(--ink); }
-  button.btn-primary {
-    background: var(--ink);
-    color: #fff;
-    border: none;
-    border-radius: var(--radius-sm);
-    padding: 10px 20px;
-    font-size: 14px;
-    font-family: inherit;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: opacity 0.15s;
-  }
-  button.btn-primary:hover { opacity: 0.85; }
-  button.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; }
+/* Add form */
+.add-section{background:var(--surface);border-radius:var(--r);padding:18px;margin-bottom:18px;border:1px solid var(--border);box-shadow:var(--sh)}
+.add-section h2{font-size:14px;font-weight:500;color:var(--ink2);margin-bottom:12px}
+.form-row{display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap}
+.fg{display:flex;flex-direction:column;gap:4px;flex:1;min-width:120px}
+.fg label{font-size:11px;color:var(--ink3)}
+.fg input{border:1px solid var(--border);border-radius:var(--rs);padding:8px 10px;font-size:14px;font-family:inherit;background:var(--bg);color:var(--ink);outline:none;transition:border-color .15s}
+.fg input:focus{border-color:var(--ink)}
+.btn-primary{background:var(--ink);color:#fff;border:none;border-radius:var(--rs);padding:9px 18px;font-size:14px;font-family:inherit;cursor:pointer;white-space:nowrap;transition:opacity .15s;height:38px}
+.btn-primary:hover{opacity:.85}.btn-primary:disabled{opacity:.4;cursor:not-allowed}
 
-  /* Debt List */
-  .debt-list { display: flex; flex-direction: column; gap: 12px; }
-  .debt-card {
-    background: var(--surface);
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-    transition: box-shadow 0.2s;
-  }
-  .debt-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
-  .debt-header {
-    padding: 16px 18px 12px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 12px;
-  }
-  .debt-label { font-size: 16px; font-weight: 500; }
-  .debt-date { font-size: 12px; color: var(--ink3); margin-top: 3px; }
-  .debt-amounts { text-align: right; }
-  .debt-total { font-size: 13px; color: var(--ink3); }
-  .debt-remain { font-size: 20px; font-weight: 600; color: var(--accent); }
-  .debt-remain.done { color: var(--green); }
+/* Debt cards */
+.debt-list{display:flex;flex-direction:column;gap:10px}
+.debt-card{background:var(--surface);border-radius:var(--r);border:1px solid var(--border);box-shadow:var(--sh);overflow:hidden}
+.debt-header{padding:14px 16px 10px;display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.debt-label{font-size:15px;font-weight:500}
+.debt-date{font-size:11px;color:var(--ink3);margin-top:3px}
+.debt-amounts{text-align:right;flex-shrink:0}
+.debt-total-lbl{font-size:12px;color:var(--ink3)}
+.debt-remain{font-size:19px;font-weight:600;color:var(--red)}
+.debt-remain.done{color:var(--green)}
+.badge-done{display:inline-block;background:var(--green-light);color:var(--green);border-radius:20px;font-size:11px;padding:2px 9px;font-weight:500;margin-left:6px;vertical-align:middle}
 
-  /* Progress Bar */
-  .progress-wrap { padding: 0 18px 8px; }
-  .progress-bar {
-    height: 5px;
-    background: var(--surface2);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-  .progress-fill {
-    height: 100%;
-    background: var(--green);
-    border-radius: 3px;
-    transition: width 0.4s;
-  }
-  .progress-label {
-    font-size: 11px;
-    color: var(--ink3);
-    margin-top: 4px;
-    display: flex;
-    justify-content: space-between;
-  }
+/* Progress */
+.progress-wrap{padding:0 16px 8px}
+.progress-bar{height:4px;background:var(--surface2);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:var(--green);border-radius:3px;transition:width .4s}
+.progress-lbl{font-size:11px;color:var(--ink3);margin-top:4px;display:flex;justify-content:space-between}
 
-  /* Payment Section */
-  .debt-actions {
-    padding: 10px 18px 14px;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    border-top: 1px solid var(--border);
-    background: var(--surface2);
-    flex-wrap: wrap;
-  }
-  .pay-input-group {
-    display: flex;
-    gap: 6px;
-    flex: 1;
-    align-items: center;
-  }
-  .pay-input-group input {
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 7px 10px;
-    font-size: 14px;
-    font-family: inherit;
-    background: var(--surface);
-    color: var(--ink);
-    outline: none;
-    flex: 1;
-    min-width: 80px;
-  }
-  .pay-input-group input:focus { border-color: var(--ink); }
-  button.btn-pay {
-    background: var(--green);
-    color: #fff;
-    border: none;
-    border-radius: var(--radius-sm);
-    padding: 7px 14px;
-    font-size: 13px;
-    font-family: inherit;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: opacity 0.15s;
-  }
-  button.btn-pay:hover { opacity: 0.85; }
-  button.btn-pay:disabled { opacity: 0.4; cursor: not-allowed; }
+/* Last slip */
+.last-slip{font-size:11px;padding:2px 16px 8px}
+.last-slip a{color:var(--ink3);text-decoration:none}.last-slip a:hover{color:var(--ink);text-decoration:underline}
 
-  /* Slip Upload */
-  .slip-upload-label {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 12px;
-    color: var(--ink3);
-    cursor: pointer;
-    border: 1px dashed var(--border);
-    border-radius: var(--radius-sm);
-    padding: 6px 10px;
-    background: var(--surface);
-    transition: border-color 0.15s;
-  }
-  .slip-upload-label:hover { border-color: var(--ink3); color: var(--ink2); }
-  .slip-upload-label input[type="file"] { display: none; }
-  .slip-preview {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12px;
-    color: var(--green);
-  }
-  .slip-preview img { width: 28px; height: 28px; object-fit: cover; border-radius: 4px; cursor: pointer; }
+/* Actions row */
+.debt-actions{padding:10px 16px 12px;border-top:1px solid var(--border);background:var(--surface2);display:flex;gap:8px;align-items:stretch;flex-wrap:wrap}
+.pay-inputs{display:flex;gap:6px;flex:1;align-items:center;flex-wrap:wrap;min-width:200px}
+.pay-inputs input{border:1px solid var(--border);border-radius:var(--rs);padding:7px 9px;font-size:13px;font-family:inherit;background:var(--surface);color:var(--ink);outline:none;flex:1;min-width:80px;height:34px}
+.pay-inputs input:focus{border-color:var(--ink)}
 
-  button.btn-delete {
-    background: none;
-    border: none;
-    color: var(--ink3);
-    cursor: pointer;
-    font-size: 18px;
-    padding: 2px 6px;
-    border-radius: 6px;
-    line-height: 1;
-    transition: background 0.15s, color 0.15s;
-    margin-left: auto;
-  }
-  button.btn-delete:hover { background: var(--accent-light); color: var(--accent); }
+/* Slip button — standalone, not inside label */
+.slip-btn{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--ink3);cursor:pointer;border:1px dashed var(--border);border-radius:var(--rs);padding:0 10px;background:var(--surface);height:34px;white-space:nowrap;transition:border-color .15s;user-select:none;font-family:inherit}
+.slip-btn:hover{border-color:var(--ink3);color:var(--ink2)}
+.slip-btn.has-file{border-color:var(--green);color:var(--green);background:var(--green-light)}
 
-  /* Last slip link */
-  .last-slip { font-size: 11px; padding: 4px 18px 10px; }
-  .last-slip a { color: var(--ink3); text-decoration: none; }
-  .last-slip a:hover { color: var(--ink); text-decoration: underline; }
+.btn-pay{background:var(--green);color:#fff;border:none;border-radius:var(--rs);padding:0 14px;font-size:13px;font-family:inherit;cursor:pointer;white-space:nowrap;transition:opacity .15s;height:34px}
+.btn-pay:hover{opacity:.85}.btn-pay:disabled{opacity:.4;cursor:not-allowed}
+.btn-delete{background:none;border:none;color:var(--ink3);cursor:pointer;font-size:17px;padding:0 6px;border-radius:6px;line-height:1;transition:background .15s,color .15s;height:34px;display:flex;align-items:center}
+.btn-delete:hover{background:var(--red-light);color:var(--red)}
 
-  /* Badge done */
-  .badge-done {
-    display: inline-block;
-    background: var(--green-light);
-    color: var(--green);
-    border-radius: 20px;
-    font-size: 11px;
-    padding: 2px 10px;
-    font-weight: 500;
-    margin-left: 6px;
-    vertical-align: middle;
-  }
+/* Empty / loading */
+.empty-state{text-align:center;padding:44px 20px;color:var(--ink3);font-size:14px}
+.empty-state .icon{font-size:36px;margin-bottom:10px}
 
-  /* Empty state */
-  .empty-state {
-    text-align: center;
-    padding: 48px 20px;
-    color: var(--ink3);
-    font-size: 15px;
-  }
-  .empty-state .icon { font-size: 40px; margin-bottom: 12px; }
+/* Toast */
+#toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 18px;border-radius:8px;font-size:13px;opacity:0;pointer-events:none;transition:opacity .3s;z-index:999;white-space:nowrap}
+#toast.show{opacity:1}
 
-  /* Toast */
-  #toast {
-    position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
-    background: var(--ink); color: #fff;
-    padding: 10px 20px; border-radius: 8px; font-size: 14px;
-    opacity: 0; pointer-events: none;
-    transition: opacity 0.3s;
-    z-index: 999;
-  }
-  #toast.show { opacity: 1; }
+/* Modals */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.45);z-index:100;align-items:center;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal-box{background:var(--surface);border-radius:var(--r);padding:22px;width:90%;max-width:440px;box-shadow:0 8px 40px rgba(0,0,0,0.2)}
+.modal-box h2{font-size:15px;margin-bottom:12px}
+.modal-box p{font-size:13px;color:var(--ink2);margin-bottom:10px;line-height:1.6}
+.modal-box input{width:100%;border:1px solid var(--border);border-radius:var(--rs);padding:9px 11px;font-size:14px;font-family:inherit;background:var(--bg);color:var(--ink);outline:none;margin-bottom:12px}
+.modal-box input:focus{border-color:var(--ink)}
+.modal-btns{display:flex;gap:8px;justify-content:flex-end}
+.btn-secondary{background:none;border:1px solid var(--border);border-radius:var(--rs);padding:7px 14px;font-size:13px;font-family:inherit;cursor:pointer;color:var(--ink2)}
+.btn-secondary:hover{background:var(--surface2)}
 
-  /* Config modal */
-  #config-overlay {
-    display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,0.45);
-    z-index: 100; align-items: center; justify-content: center;
-  }
-  #config-overlay.open { display: flex; }
-  #config-box {
-    background: var(--surface);
-    border-radius: var(--radius);
-    padding: 24px;
-    width: 90%;
-    max-width: 440px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.2);
-  }
-  #config-box h2 { font-size: 16px; margin-bottom: 16px; }
-  #config-box p { font-size: 13px; color: var(--ink2); margin-bottom: 12px; line-height: 1.6; }
-  #config-box input {
-    width: 100%; border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 10px 12px;
-    font-size: 14px;
-    font-family: inherit;
-    background: var(--bg);
-    color: var(--ink);
-    outline: none;
-    margin-bottom: 14px;
-  }
-  #config-box input:focus { border-color: var(--ink); }
-  .config-btns { display: flex; gap: 8px; justify-content: flex-end; }
-  button.btn-secondary {
-    background: none;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 8px 16px;
-    font-size: 13px;
-    font-family: inherit;
-    cursor: pointer;
-    color: var(--ink2);
-  }
+#slip-view-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:200;align-items:center;justify-content:center}
+#slip-view-overlay.open{display:flex}
+#slip-view-overlay img{max-width:90vw;max-height:85vh;border-radius:10px}
 
-  /* Loading spinner */
-  .spinner {
-    display: inline-block; width: 14px; height: 14px;
-    border: 2px solid rgba(255,255,255,0.4);
-    border-top-color: #fff;
-    border-radius: 50%;
-    animation: spin 0.6s linear infinite;
-    vertical-align: middle;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  @media (max-width: 480px) {
-    .summary-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
-    .summary-card .value { font-size: 16px; }
-    .form-row { flex-direction: column; }
-    .debt-actions { flex-wrap: wrap; }
-  }
-
-  /* Slip modal */
-  #slip-modal-overlay {
-    display: none; position: fixed; inset: 0;
-    background: rgba(0,0,0,0.8);
-    z-index: 200; align-items: center; justify-content: center;
-  }
-  #slip-modal-overlay.open { display: flex; }
-  #slip-modal-overlay img {
-    max-width: 90vw; max-height: 85vh;
-    border-radius: 10px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
-  }
+.spinner{display:inline-block;width:13px;height:13px;border:2px solid rgba(255,255,255,0.4);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
@@ -350,222 +105,222 @@
 <header>
   <span>📋</span>
   <h1>บันทึกหนี้</h1>
-  <button onclick="openConfig()" style="margin-left:auto;background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:8px;padding:6px 12px;font-size:13px;font-family:inherit;cursor:pointer;">⚙️ ตั้งค่า API</button>
+  <button class="hdr-btn" onclick="openConfig()">⚙️ ตั้งค่า API</button>
 </header>
 
 <div class="container">
-  <!-- Summary -->
   <div class="summary-grid">
-    <div class="summary-card total">
-      <div class="label">หนี้ทั้งหมด</div>
-      <div class="value" id="sum-total">฿0</div>
-    </div>
-    <div class="summary-card paid">
-      <div class="label">จ่ายแล้ว</div>
-      <div class="value" id="sum-paid">฿0</div>
-    </div>
-    <div class="summary-card remain">
-      <div class="label">ยังค้างอยู่</div>
-      <div class="value" id="sum-remain">฿0</div>
-    </div>
+    <div class="sc total"><div class="lbl">หนี้ทั้งหมด</div><div class="val" id="sum-total">฿0</div></div>
+    <div class="sc paid"><div class="lbl">จ่ายแล้ว</div><div class="val" id="sum-paid">฿0</div></div>
+    <div class="sc remain"><div class="lbl">ยังค้างอยู่</div><div class="val" id="sum-remain">฿0</div></div>
   </div>
 
-  <!-- Add Debt -->
   <div class="add-section">
     <h2>เพิ่มรายการหนี้</h2>
     <div class="form-row">
-      <div class="form-group" style="flex:2">
+      <div class="fg" style="flex:2">
         <label>รายการ / ชื่อหนี้ (ไม่บังคับ)</label>
-        <input type="text" id="new-label" placeholder="เช่น ค่าเช่า, หนี้บัตรเครดิต" />
+        <input type="text" id="new-label" placeholder="เช่น ค่าเช่า, บัตรเครดิต" />
       </div>
-      <div class="form-group" style="flex:1">
+      <div class="fg" style="flex:1">
         <label>จำนวนเงิน (บาท)</label>
         <input type="number" id="new-amount" placeholder="0" min="0" />
       </div>
-      <button class="btn-primary" id="btn-add-debt" onclick="addDebt()">+ เพิ่ม</button>
+      <button class="btn-primary" id="btn-add" onclick="addDebt()">+ เพิ่ม</button>
     </div>
   </div>
 
-  <!-- Debt List -->
   <div class="debt-list" id="debt-list">
-    <div class="empty-state">
-      <div class="icon">📝</div>
-      กำลังโหลดข้อมูล...
-    </div>
+    <div class="empty-state"><div class="icon">⏳</div>กำลังโหลด...</div>
   </div>
 </div>
 
-<!-- Toast -->
 <div id="toast"></div>
 
 <!-- Config Modal -->
-<div id="config-overlay">
-  <div id="config-box">
+<div class="modal-overlay" id="config-overlay">
+  <div class="modal-box">
     <h2>⚙️ ตั้งค่า Google Apps Script</h2>
-    <p>วาง URL ของ Web App ที่ได้จากการ Deploy Google Apps Script ด้านล่าง</p>
-    <input type="text" id="config-url" placeholder="https://script.google.com/macros/s/..." />
-    <div class="config-btns">
+    <p>วาง URL ของ Web App ที่ได้จากการ Deploy Google Apps Script<br>(Execute as: Me / Who has access: Anyone)</p>
+    <input type="text" id="config-url" placeholder="https://script.google.com/macros/s/.../exec" />
+    <div class="modal-btns">
       <button class="btn-secondary" onclick="closeConfig()">ยกเลิก</button>
       <button class="btn-primary" onclick="saveConfig()">บันทึก</button>
     </div>
   </div>
 </div>
 
-<!-- Slip Modal -->
-<div id="slip-modal-overlay" onclick="this.classList.remove('open')">
-  <img id="slip-modal-img" src="" alt="สลิป" />
+<!-- Slip view modal -->
+<div id="slip-view-overlay" onclick="this.classList.remove('open')">
+  <img id="slip-view-img" src="" alt="สลิป" />
 </div>
 
+<!-- Hidden file inputs (อยู่นอก debt cards เพื่อไม่ให้ถูก re-render ทับ) -->
+<div id="file-inputs-container" style="display:none"></div>
+
 <script>
-// ============================================================
-//  CONFIG
-// ============================================================
+// ── CONFIG ────────────────────────────────────────────────
 let API_URL = localStorage.getItem("debt_api_url") || "";
 
 function openConfig() {
   document.getElementById("config-url").value = API_URL;
   document.getElementById("config-overlay").classList.add("open");
 }
-function closeConfig() {
-  document.getElementById("config-overlay").classList.remove("open");
-}
+function closeConfig() { document.getElementById("config-overlay").classList.remove("open"); }
 function saveConfig() {
   API_URL = document.getElementById("config-url").value.trim();
   localStorage.setItem("debt_api_url", API_URL);
   closeConfig();
-  showToast("บันทึก URL แล้ว 🎉");
+  showToast("บันทึก URL แล้ว ✅");
   loadDebts();
 }
 
-// ============================================================
-//  STATE
-// ============================================================
+// ── STATE ─────────────────────────────────────────────────
 let debts = [];
-const slipFiles = {}; // id -> File object
+const pendingSlips = {}; // debtId -> { file, previewUrl }
 
-// ============================================================
-//  API HELPERS
-// ============================================================
-async function apiGet() {
-  if (!API_URL) return [];
-  const res = await fetch(API_URL, { method: "GET" });
-  const json = await res.json();
-  return json.success ? json.data : [];
-}
-
-async function apiPost(payload) {
+// ── API ───────────────────────────────────────────────────
+async function api(payload) {
   if (!API_URL) { showToast("⚠️ กรุณาตั้งค่า API URL ก่อน"); return null; }
-  const res = await fetch(API_URL, {
-    method: "POST",
-    body: JSON.stringify(payload),
-  });
-  return await res.json();
+  try {
+    const res = await fetch(API_URL, {
+      method: "POST",
+      body: JSON.stringify(payload),
+      headers: { "Content-Type": "text/plain" } // avoid preflight on GAS
+    });
+    return await res.json();
+  } catch(e) {
+    showToast("เชื่อมต่อ API ไม่ได้ ❌");
+    return null;
+  }
 }
 
-async function uploadSlip(file) {
-  return new Promise((resolve) => {
+async function doUploadSlip(file) {
+  return new Promise(resolve => {
     const reader = new FileReader();
-    reader.onload = async (e) => {
+    reader.onload = async e => {
       const base64 = e.target.result.split(",")[1];
-      const mimeType = file.type;
-      const filename = "slip_" + Date.now() + "_" + file.name;
-      const res = await apiPost({ action: "uploadSlip", base64, mimeType, filename });
+      const res = await api({ action:"uploadSlip", base64, mimeType:file.type, filename:"slip_"+Date.now()+"_"+file.name });
       resolve(res && res.success ? res.url : null);
     };
     reader.readAsDataURL(file);
   });
 }
 
-// ============================================================
-//  LOAD & RENDER
-// ============================================================
+// ── LOAD & RENDER ─────────────────────────────────────────
 async function loadDebts() {
   const list = document.getElementById("debt-list");
   list.innerHTML = '<div class="empty-state"><div class="icon">⏳</div>กำลังโหลด...</div>';
   if (!API_URL) {
-    list.innerHTML = '<div class="empty-state"><div class="icon">⚙️</div>กรุณาตั้งค่า API URL ก่อนใช้งาน</div>';
+    list.innerHTML = '<div class="empty-state"><div class="icon">⚙️</div>กรุณาตั้งค่า API URL ก่อน</div>';
     updateSummary([]);
     return;
   }
-  try {
-    debts = await apiGet();
-    renderDebts();
-  } catch (err) {
-    list.innerHTML = '<div class="empty-state"><div class="icon">❌</div>โหลดข้อมูลไม่สำเร็จ กรุณาตรวจสอบ API URL</div>';
+  const res = await api({ action: "list" });
+  if (!res || !res.success) {
+    list.innerHTML = '<div class="empty-state"><div class="icon">❌</div>โหลดข้อมูลไม่สำเร็จ<br><small>ตรวจสอบ API URL และ permission</small></div>';
     updateSummary([]);
+    return;
   }
+  debts = res.data || [];
+  renderDebts();
+  syncFileInputs();
 }
 
 function renderDebts() {
-  const list = document.getElementById("debt-list");
   updateSummary(debts);
+  const list = document.getElementById("debt-list");
   if (!debts.length) {
     list.innerHTML = '<div class="empty-state"><div class="icon">✅</div>ยังไม่มีรายการหนี้</div>';
     return;
   }
   list.innerHTML = debts.map(d => {
     const total = Number(d.totalAmount) || 0;
-    const paid = Number(d.paidAmount) || 0;
+    const paid  = Number(d.paidAmount)  || 0;
     const remain = total - paid;
-    const pct = total > 0 ? Math.min(100, Math.round(paid / total * 100)) : 0;
+    const pct  = total > 0 ? Math.min(100, Math.round(paid/total*100)) : 0;
     const done = remain <= 0;
-    const dateStr = d.createdAt ? new Date(d.createdAt).toLocaleDateString("th-TH", { day:"numeric", month:"short", year:"2-digit" }) : "";
+    const dateStr = d.createdAt ? new Date(d.createdAt).toLocaleDateString("th-TH",{day:"numeric",month:"short",year:"2-digit"}) : "";
+    const slip = pendingSlips[d.id];
     return `
-    <div class="debt-card" id="card-${d.id}">
-      <div class="debt-header">
-        <div>
-          <div class="debt-label">${escHtml(d.label || "ไม่ระบุรายการ")}${done ? '<span class="badge-done">ชำระแล้ว ✓</span>' : ''}</div>
-          <div class="debt-date">${dateStr}${d.note ? ' · ' + escHtml(d.note) : ''}</div>
-        </div>
-        <div class="debt-amounts">
-          <div class="debt-total">หนี้ทั้งหมด ${fmt(total)}</div>
-          <div class="debt-remain ${done ? 'done' : ''}">คงเหลือ ${fmt(remain)}</div>
-        </div>
-      </div>
-      <div class="progress-wrap">
-        <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
-        <div class="progress-label"><span>จ่ายแล้ว ${fmt(paid)}</span><span>${pct}%</span></div>
-      </div>
-      ${d.lastSlipUrl ? `<div class="last-slip">🧾 <a href="${d.lastSlipUrl}" target="_blank">ดูสลิปล่าสุด</a></div>` : ""}
-      ${done ? "" : `
-      <div class="debt-actions">
-        <div class="pay-input-group">
-          <input type="number" id="pay-${d.id}" placeholder="จำนวนเงินที่จ่าย" min="0" />
-          <input type="text" id="note-${d.id}" placeholder="หมายเหตุ (ไม่บังคับ)" style="max-width:120px" />
-        </div>
-        <label class="slip-upload-label" id="slip-label-${d.id}">
-          📎 แนบสลิป
-          <input type="file" accept="image/*" onchange="onSlipChange('${d.id}', this)" />
-        </label>
-        <button class="btn-pay" id="btn-pay-${d.id}" onclick="recordPayment('${d.id}')">บันทึกการจ่าย</button>
-        <button class="btn-delete" title="ลบรายการ" onclick="confirmDelete('${d.id}', '${escHtml(d.label || "รายการนี้")}')">🗑</button>
-      </div>`}
-      ${done ? `<div class="debt-actions" style="justify-content:flex-end"><button class="btn-delete" title="ลบรายการ" onclick="confirmDelete('${d.id}', '${escHtml(d.label || "รายการนี้")}')">🗑 ลบ</button></div>` : ""}
-    </div>`;
+<div class="debt-card" id="card-${esc(d.id)}">
+  <div class="debt-header">
+    <div>
+      <div class="debt-label">${esc(d.label||"ไม่ระบุรายการ")}${done?'<span class="badge-done">ชำระแล้ว ✓</span>':''}</div>
+      <div class="debt-date">${dateStr}${d.note?' · '+esc(d.note):''}</div>
+    </div>
+    <div class="debt-amounts">
+      <div class="debt-total-lbl">หนี้ทั้งหมด ${fmt(total)}</div>
+      <div class="debt-remain${done?' done':''}">คงเหลือ ${fmt(remain)}</div>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" style="width:${pct}%"></div></div>
+    <div class="progress-lbl"><span>จ่ายแล้ว ${fmt(paid)}</span><span>${pct}%</span></div>
+  </div>
+  ${d.lastSlipUrl ? `<div class="last-slip">🧾 <a href="${d.lastSlipUrl}" target="_blank">ดูสลิปล่าสุด</a></div>` : ""}
+  <div class="debt-actions">
+    ${done ? "" : `
+    <div class="pay-inputs">
+      <input type="number" id="pay-${esc(d.id)}" placeholder="จำนวนเงินที่จ่าย" min="0" />
+      <input type="text"   id="note-${esc(d.id)}" placeholder="หมายเหตุ (ไม่บังคับ)" />
+    </div>
+    <button class="slip-btn${slip?' has-file':''}" id="slip-btn-${esc(d.id)}" onclick="triggerFileInput('${esc(d.id)}')" type="button">
+      ${slip ? '🖼 '+esc(slip.file.name.substring(0,12))+'...' : '📎 แนบสลิป'}
+    </button>
+    <button class="btn-pay" id="btn-pay-${esc(d.id)}" onclick="recordPayment('${esc(d.id)}')">บันทึกการจ่าย</button>
+    `}
+    <button class="btn-delete" onclick="confirmDelete('${esc(d.id)}','${esc(d.label||'รายการนี้')}')" title="ลบ">🗑</button>
+  </div>
+</div>`;
   }).join("");
 }
 
-function updateSummary(list) {
-  const total = list.reduce((s, d) => s + (Number(d.totalAmount) || 0), 0);
-  const paid  = list.reduce((s, d) => s + (Number(d.paidAmount) || 0), 0);
-  document.getElementById("sum-total").textContent  = fmt(total);
-  document.getElementById("sum-paid").textContent   = fmt(paid);
-  document.getElementById("sum-remain").textContent = fmt(total - paid);
+// ── FILE INPUT MANAGEMENT (แยกออกจาก card เพื่อไม่ถูก re-render) ────
+function syncFileInputs() {
+  const container = document.getElementById("file-inputs-container");
+  // เพิ่ม input ที่ยังไม่มี
+  debts.forEach(d => {
+    if (!document.getElementById("fi-"+d.id)) {
+      const inp = document.createElement("input");
+      inp.type = "file";
+      inp.accept = "image/*";
+      inp.id = "fi-"+d.id;
+      inp.dataset.debtId = d.id;
+      inp.addEventListener("change", function() { onFileSelected(d.id, this); });
+      container.appendChild(inp);
+    }
+  });
 }
 
-// ============================================================
-//  ACTIONS
-// ============================================================
+function triggerFileInput(id) {
+  const inp = document.getElementById("fi-"+id);
+  if (inp) inp.click();
+}
+
+function onFileSelected(id, input) {
+  const file = input.files[0];
+  if (!file) return;
+  const url = URL.createObjectURL(file);
+  pendingSlips[id] = { file, previewUrl: url };
+  // อัปเดตเฉพาะปุ่มแนบสลิป โดยไม่ re-render ทั้งหน้า
+  const btn = document.getElementById("slip-btn-"+id);
+  if (btn) {
+    btn.className = "slip-btn has-file";
+    btn.textContent = "🖼 " + file.name.substring(0,14) + (file.name.length>14?"...":"");
+  }
+  showToast("เลือกสลิปแล้ว ✅");
+}
+
+// ── ACTIONS ───────────────────────────────────────────────
 async function addDebt() {
   const label  = document.getElementById("new-label").value.trim();
   const amount = parseFloat(document.getElementById("new-amount").value);
   if (!amount || amount <= 0) { showToast("กรุณาใส่จำนวนเงิน"); return; }
-  const btn = document.getElementById("btn-add-debt");
-  btn.disabled = true;
-  btn.innerHTML = '<span class="spinner"></span>';
-  const res = await apiPost({ action: "addDebt", label, totalAmount: amount });
-  btn.disabled = false;
-  btn.textContent = "+ เพิ่ม";
+  const btn = document.getElementById("btn-add");
+  btn.disabled = true; btn.innerHTML = '<span class="spinner"></span>';
+  const res = await api({ action:"addDebt", label, totalAmount:amount });
+  btn.disabled = false; btn.textContent = "+ เพิ่ม";
   if (res && res.success) {
     document.getElementById("new-label").value = "";
     document.getElementById("new-amount").value = "";
@@ -576,89 +331,58 @@ async function addDebt() {
   }
 }
 
-function onSlipChange(id, input) {
-  const file = input.files[0];
-  if (!file) return;
-  slipFiles[id] = file;
-  const label = document.getElementById("slip-label-" + id);
-  const reader = new FileReader();
-  reader.onload = (e) => {
-    label.innerHTML = `<div class="slip-preview"><img src="${e.target.result}" onclick="openSlipModal('${e.target.result}')" />เลือกแล้ว ✓</div>`;
-  };
-  reader.readAsDataURL(file);
-}
-
 async function recordPayment(id) {
-  const amountEl = document.getElementById("pay-" + id);
-  const noteEl   = document.getElementById("note-" + id);
-  const amount   = parseFloat(amountEl.value);
+  const amountEl = document.getElementById("pay-"+id);
+  const noteEl   = document.getElementById("note-"+id);
+  const amount   = parseFloat(amountEl?.value);
   if (!amount || amount <= 0) { showToast("กรุณาใส่จำนวนเงินที่จ่าย"); return; }
-  const btn = document.getElementById("btn-pay-" + id);
-  btn.disabled = true;
-  btn.innerHTML = '<span class="spinner"></span>';
+  const btn = document.getElementById("btn-pay-"+id);
+  btn.disabled = true; btn.innerHTML = '<span class="spinner"></span>';
 
   let slipUrl = null;
-  if (slipFiles[id]) {
+  if (pendingSlips[id]) {
     showToast("กำลังอัปโหลดสลิป...");
-    slipUrl = await uploadSlip(slipFiles[id]);
-    delete slipFiles[id];
+    slipUrl = await doUploadSlip(pendingSlips[id].file);
+    URL.revokeObjectURL(pendingSlips[id].previewUrl);
+    delete pendingSlips[id];
   }
 
-  const res = await apiPost({
-    action: "addPayment",
-    id,
-    amount,
-    slipUrl,
-    note: noteEl ? noteEl.value.trim() : ""
-  });
-  btn.disabled = false;
-  btn.textContent = "บันทึกการจ่าย";
+  const res = await api({ action:"addPayment", id, amount, slipUrl, note: noteEl?.value.trim()||"" });
   if (res && res.success) {
     showToast("บันทึกการจ่ายแล้ว 💸");
     await loadDebts();
   } else {
+    btn.disabled = false; btn.textContent = "บันทึกการจ่าย";
     showToast("เกิดข้อผิดพลาด ❌");
   }
 }
 
 async function confirmDelete(id, label) {
-  if (!confirm(`ยืนยันลบ "${label}"?`)) return;
-  const res = await apiPost({ action: "deleteDebt", id });
-  if (res && res.success) {
-    showToast("ลบแล้ว 🗑");
-    await loadDebts();
-  } else {
-    showToast("ลบไม่สำเร็จ ❌");
-  }
+  if (!confirm('ยืนยันลบ "'+label+'"?')) return;
+  const res = await api({ action:"deleteDebt", id });
+  if (res && res.success) { showToast("ลบแล้ว 🗑"); await loadDebts(); }
+  else showToast("ลบไม่สำเร็จ ❌");
 }
 
-// ============================================================
-//  UTILS
-// ============================================================
-function fmt(n) {
-  return "฿" + Number(n).toLocaleString("th-TH", { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+// ── UTILS ─────────────────────────────────────────────────
+function updateSummary(list) {
+  const total = list.reduce((s,d)=>s+(Number(d.totalAmount)||0),0);
+  const paid  = list.reduce((s,d)=>s+(Number(d.paidAmount)||0),0);
+  document.getElementById("sum-total").textContent  = fmt(total);
+  document.getElementById("sum-paid").textContent   = fmt(paid);
+  document.getElementById("sum-remain").textContent = fmt(total-paid);
 }
-function escHtml(s) {
-  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
-}
+function fmt(n) { return "฿"+Number(n).toLocaleString("th-TH",{minimumFractionDigits:0,maximumFractionDigits:2}); }
+function esc(s) { return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
 function showToast(msg) {
-  const t = document.getElementById("toast");
-  t.textContent = msg;
-  t.classList.add("show");
-  setTimeout(() => t.classList.remove("show"), 2500);
-}
-function openSlipModal(src) {
-  document.getElementById("slip-modal-img").src = src;
-  document.getElementById("slip-modal-overlay").classList.add("open");
+  const t=document.getElementById("toast");
+  t.textContent=msg; t.classList.add("show");
+  setTimeout(()=>t.classList.remove("show"),2500);
 }
 
-// ============================================================
-//  INIT
-// ============================================================
-if (!API_URL) {
-  setTimeout(openConfig, 300);
-}
-loadDebts();
+// ── INIT ──────────────────────────────────────────────────
+if (!API_URL) setTimeout(openConfig, 300);
+else loadDebts();
 </script>
 </body>
 </html>
